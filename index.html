@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
+      rel="stylesheet" />
+    <title>SNAP</title>
+  </head>
+  <body>
+    <div class="div"></div>
+    <!-- Start Header -->
+    <div class="header">
+      <div class="content-links">
+        <img src="/imgs/logo.svg" alt="" />
+        <div class="links">
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Company</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="content-button">
+        <ul>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Register</a></li>
+        </ul>
+      </div>
+      <img src="/imgs/icon-menu.svg" class="iconmenu" alt="" />
+      <div class="bloc-mobile">
+        <div class="content-links-mobile">
+          <img src="/imgs/icon-close-menu.svg" alt="" class="closeicon" />
+          <div class="links-mobile">
+            <ul>
+              <li>
+                <a href="#">Features</a
+                ><img src="/imgs/icon-arrow-down.svg" alt="" />
+                <img src="/imgs/icon-arrow-up.svg" class="up" alt="" />
+                <div class="sous-dossierone">
+                  <ul>
+                    <li><img src="/imgs/icon-todo.svg" alt="" /> Todo List</li>
+                    <li>
+                      <img src="/imgs/icon-calendar.svg" alt="" /> Calendar
+                    </li>
+                    <li>
+                      <img src="/imgs/icon-reminders.svg" alt="" /> Reminders
+                    </li>
+                    <li>
+                      <img src="/imgs/icon-planning.svg" alt="" /> Planning
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#">Company</a
+                ><img src="/imgs/icon-arrow-down.svg" alt="" />
+                <img src="/imgs/icon-arrow-up.svg" class="up" alt="" />
+                <div class="sous-dossiertwo">
+                  <ul>
+                    <li>History</li>
+                    <li>Our Team</li>
+                    <li>Blog</li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+          </div>
+          <div class="content-button-mobile">
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Header -->
+    <!-- bloc hover header -->
+    <div class="bloc-one">
+      <ul>
+        <li><img src="/imgs/icon-todo.svg" alt="" /> Todo List</li>
+        <li><img src="/imgs/icon-calendar.svg" alt="" /> Calendar</li>
+        <li><img src="/imgs/icon-reminders.svg" alt="" /> Reminders</li>
+        <li><img src="/imgs/icon-planning.svg" alt="" /> Planning</li>
+      </ul>
+    </div>
+    <div class="bloc-two">
+      <ul>
+        <li>History</li>
+        <li>Our Team</li>
+        <li>Blog</li>
+      </ul>
+    </div>
+    <!-- Start Landing Page -->
+    <div class="container">
+      <div class="content-text">
+        <div class="bloc-text">
+          <h1>Make</h1>
+          <h1>remote work</h1>
+          <p>
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <a href="#">Learn more</a>
+        </div>
+        <div class="icon-ex">
+          <img src="/imgs/client-databiz.svg" alt="" />
+          <img src="/imgs/client-audiophile.svg" alt="" />
+          <img src="/imgs/client-meet.svg" alt="" />
+          <img src="/imgs/client-maker.svg" alt="" />
+        </div>
+      </div>
+      <div class="image">
+        <img src="/imgs/image-hero-desktop.png" alt="" />
+        <img src="/imgs/image-hero-mobile.png" class="imgmobile" alt="" />
+      </div>
+    </div>
+    <!-- End Landing Page -->
+    <script>
+      const features = document.querySelector(".links ul li:nth-child(1)");
+      const company = document.querySelector(".links ul li:nth-child(2)");
+      const blocOne = document.querySelector(".bloc-one");
+      const blocTwo = document.querySelector(".bloc-two");
+      const barMenu = document.querySelector(".iconmenu");
+      const blocMobile = document.querySelector(".bloc-mobile");
+
+      function openpopup() {
+        blocOne.style.opacity = "1";
+      }
+      function closepopup() {
+        blocOne.style.opacity = "0";
+      }
+      function open() {
+        blocTwo.style.opacity = "1";
+      }
+      function close() {
+        blocTwo.style.opacity = "0";
+      }
+      function openclose() {
+        const div = document.querySelector(".div");
+        div.classList.add("overflow");
+        blocMobile.classList.add("openclose");
+        const closeIcon = document.querySelector(".closeicon");
+        closeIcon.addEventListener("click", () => {
+          blocMobile.classList.remove("openclose");
+          div.classList.remove("overflow");
+        });
+
+        const linkOne = document.querySelector(
+          ".content-links-mobile .links-mobile ul li:nth-child(1) a"
+        );
+        linkOne.addEventListener("click", () => {
+          const sousdossierone = document.querySelector(".sous-dossierone ul");
+          sousdossierone.classList.toggle("opensousdossier");
+        });
+
+        const linkTwo = document.querySelector(
+          ".content-links-mobile .links-mobile ul li:nth-child(2) a"
+        );
+        linkTwo.addEventListener("click", () => {
+          const sousDossierTwo = document.querySelector(".sous-dossiertwo ul");
+          sousDossierTwo.classList.toggle("opensousdossier");
+        });
+      }
+      features.addEventListener("mouseover", openpopup);
+      features.addEventListener("mouseout", closepopup);
+      company.addEventListener("mouseover", open);
+      company.addEventListener("mouseout", close);
+      barMenu.addEventListener("click", openclose);
+    </script>
+  </body>
+</html>
